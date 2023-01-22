@@ -62,11 +62,15 @@
 		elogistics.cicd.cbcd.cb.role (Role for Code Build)
 		  - AmazonS3FullAccess
 
-7. Create CodeDeploy
+7. Create Amazon S3 Bucket
+	edsystems.cicd.cbcd.s3 (Amazon S3 Bucket for EDSystems.CICD.CBCD)
+
+8. Create CodeDeploy
 	edsystems.cicd.cbcd.cd (Code Deploy for EDSystems.CICD.CBCD)
 		elogistics.cicd.cbcd.cdg (Code Deployment Group for EDSystems.CICD.CBCD)
 		elogistics.cicd.cbcd.cdg.role (Role for Code Deployment Group for EDSystems.CICD.CBCD)
 		  - AWSCodeDeployRole
+		  
 8. Create CodePipeline
 	edsystems.cicd.cbcd.cdp
 		edsystems.cicd.cbcd.cdp.role

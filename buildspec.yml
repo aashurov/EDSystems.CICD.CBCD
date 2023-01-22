@@ -4,13 +4,18 @@ phases:
   install:
     commands:
       - curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel STS
+pre_build:
+    commands:
+      - pip install --upgrade awscli
+      - echo Restoring the EDSystems.WebApi/EDSystems.WebApi.csproj...
+      - dotnet restore EDSystems.WebApi/EDSystems.WebApi.csproj
   build:
     commands:
-      - echo Building the Docker image...
-      - dotnet restore EDSystems.WebApi/EDSystems.WebApi.csproj
-      - dotnet build EDSystems.WebApi/EDSystems.WebApi.csproj -c Release -o /app/build
+      - echo Publishing the EDSystems.WebApi/EDSystems.WebApi.csproj...
+      - dotnet publish -c release -o ./app EDSystems.WebApi/EDSystems.WebApi.csproj
 artifacts:
   files:
     - '**/*'
     - appspec.yml
-    - deploy-scripts\**\*
+    - EDSystems/app/**/*
+    - deploy-scripts/**/*

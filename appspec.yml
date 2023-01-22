@@ -2,7 +2,7 @@
 version: 0
 os: linux
 files:
-  - source: app
+  - source: EDSystems/app
     destination: /var/www
   - source: deploy-scripts/edsystems.backend.service
     destination: /etc/systemd/system
