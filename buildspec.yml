@@ -8,7 +8,7 @@ phases:
     commands:
       - echo Building the Docker image...
       - dotnet restore EDSystems.WebApi/EDSystems.WebApi.csproj
-      - dotnet build EDSystems.WebApi.csproj -c Release -o /app/build
+      - dotnet build EDSystems.WebApi/EDSystems.WebApi.csproj -c Release -o /app/build
 artifacts:
   files:
     - '**/*'
