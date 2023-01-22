@@ -9,7 +9,7 @@ pre_build:
       - pip install --upgrade awscli
       - echo Restoring the EDSystems.WebApi/EDSystems.WebApi.csproj...
       - dotnet restore EDSystems.WebApi/EDSystems.WebApi.csproj
-  build:
+build:
     commands:
       - echo Publishing the EDSystems.WebApi/EDSystems.WebApi.csproj...
       - dotnet publish -c release -o ./app EDSystems.WebApi/EDSystems.WebApi.csproj
