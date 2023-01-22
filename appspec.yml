@@ -2,7 +2,7 @@
 version: 0
 os: linux
 files:
-  - source: EDSystems/app
+  - source: s3://edsystems.cicd.cbcd.s3/edsystemscicdcbcdcb/app.zip
     destination: /var/www
   - source: deploy-scripts/edsystems.backend.service
     destination: /etc/systemd/system
