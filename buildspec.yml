@@ -6,12 +6,11 @@ phases:
       - curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel STS
 pre_build:
     commands:
-      - echo Restoring the EDSystems.WebApi/EDSystems.WebApi.csproj...
-      - dotnet restore EDSystems.WebApi/EDSystems.WebApi.csproj
 build:
     commands:
       - echo Publishing the EDSystems.WebApi/EDSystems.WebApi.csproj...
-      - dotnet build -c release -o ./app ./EDSystems.WebApi/EDSystems.WebApi.csproj
+      - dotnet restore EDSystems.WebApi/EDSystems.WebApi.csproj
+      - dotnet build -c release -o ./app EDSystems.WebApi/EDSystems.WebApi.csproj
 artifacts:
   files:
     - '**/*'
