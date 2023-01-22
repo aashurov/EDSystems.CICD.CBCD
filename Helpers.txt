@@ -4,11 +4,12 @@
 	git add README.md
 	git commit -m "first commit"
 	git branch -M main
-	git remote add origin https://github.com/aashurov/EDSystems.CICD.CBCD.git
+	git remote add origin git@github.com:aashurov/EDSystems.CICD.CBCD.git
 	git push -u origin main
 	//This line for ssh
-	git push git@github.com:aashurov/aashurov-EDSystems.CICD.CBCD.git   
 	git remote set-url origin git@github.com:aashurov/EDSystems.CICD.CBCD.git
+	git push git@github.com:aashurov/aashurov-EDSystems.CICD.CBCD.git   
+
 	------------------------------------------
 2. Set ssh sgent for github account 
    https://www.youtube.com/watch?v=nZYJKXXMvkM
@@ -28,16 +29,16 @@
     j. pbcopy < ~/.ssh/id_ed25519.pub
     k. got to the https://github.com/settings/keys 
     l. Click new SSH key and paste from clipboard
-    m. git remote set-url origin git@github.com:aashurov/ELogistics.CodeDeploy.git
+    m. git remote set-url origin git@github.com:aashurov/EDSystems.CICD.CBCD.git
 
 3. Publich Aplication
-	cd Desktop/MyFutureProjects/EDSystems.CICD.CD
+	cd Desktop/MyFutureProjects/EDSystems.CICD.CBCD
 	cd EDSystems.WebApi
 	dotnet publish -o ../app
 
 4. Create EC2 instance
-	edsystems.cicd.cd.ec2
-		* edsystems.cicd.cd.ec2.role
+	edsystems.cicd.cbcd.ec2 (EC2 Instance for EDSystems.CICD.CBCD)
+		* edsystems.cicd.cbcd.ec2.role
 	 		- AmazonEC2RoleforAWSCodeDeployLimited
 			- AmazonS3FullAccess
 
@@ -56,12 +57,17 @@
 	chmod 400 ~/.ssh/EDSystems-KeyPair.pem
 	ssh -i "~/.ssh/EDSystems-KeyPair.pem" ec2-user@ec2-3-89-251-183.compute-1.amazonaws.com
 
-6. Create CodeDeploy
-	edsystems.cicd.cd.cd (Code Deploy for ELogistics.CodeDeploy)
-		elogistics.cicd.cd.cdg (Code Deployment Group for ELogistics.CodeDeploy)
-		elogistics.cicd.cd.cdg.role (Role for Code Deployment Group for ELogistics.CodeDeploy)
+6. Create CodeBuild
+	edsystems.cicd.cbcd.cb (Code Build for EDSystems.CICD.CBCD)
+		elogistics.cicd.cbcd.cb.role (Role for Code Build)
+		  - AmazonS3FullAccess
+
+7. Create CodeDeploy
+	edsystems.cicd.cbcd.cd (Code Deploy for EDSystems.CICD.CBCD)
+		elogistics.cicd.cbcd.cdg (Code Deployment Group for EDSystems.CICD.CBCD)
+		elogistics.cicd.cbcd.cdg.role (Role for Code Deployment Group for EDSystems.CICD.CBCD)
 		  - AWSCodeDeployRole
-7. Create CodePipeline
-	edsystems.cicd.cd.cdp
-		edsystems.cicd.cd.cdp.role
+8. Create CodePipeline
+	edsystems.cicd.cbcd.cdp
+		edsystems.cicd.cbcd.cdp.role
 			- AmazonS3FullAccess
