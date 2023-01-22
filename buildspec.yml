@@ -12,7 +12,7 @@ pre_build:
 build:
     commands:
       - echo Publishing the EDSystems.WebApi/EDSystems.WebApi.csproj...
-      - dotnet build -c release -o ./app EDSystems.WebApi/EDSystems.WebApi.csproj
+      - dotnet build -c release -o ./app ./EDSystems.WebApi/EDSystems.WebApi.csproj
 artifacts:
   files:
     - '**/*'
