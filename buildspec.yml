@@ -6,7 +6,6 @@ phases:
       - curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel STS
 pre_build:
     commands:
-      - pip install --upgrade awscli
       - echo Restoring the EDSystems.WebApi/EDSystems.WebApi.csproj...
       - dotnet restore EDSystems.WebApi/EDSystems.WebApi.csproj
 build:
